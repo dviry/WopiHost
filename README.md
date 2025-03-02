@@ -64,7 +64,7 @@ Configuration
 | :--- | :--- | :--- |
 |`Wopi:StorageProviderAssemblyName`| [`"WopiHost.FileSystemProvider"`](https://github.com/petrsvihlik/WopiHost/tree/master/WopiHost.FileSystemProvider) | Name of assembly containing implementation of `WopiHost.Abstractions` interfaces |
 |`Wopi:StorageProvider:RootPath` | [`".\\wopi-docs"`](https://github.com/petrsvihlik/WopiHost/tree/master/WopiHost/wwwroot/wopi-docs) | Provider-specific setting used by `WopiHost.FileSystemProvider` (which is an implementation of `IWopiStorageProvider` working with System.IO) |
-|`Wopi:UseCobalt`| `true`| Whether or not to use [MS-FSSHTTP](https://docs.microsoft.com/en-us/openspecs/sharepoint_protocols/ms-fsshttp/) for file synchronization. More details at [Cobalt](#cobalt)|
+|`Wopi:UseCobalt`| `true`| Whether or not to use [MS-FSSHTTP](https://learn.microsoft.com/openspecs/sharepoint_protocols/ms-fsshttp/) for file synchronization. More details at [Cobalt](#cobalt)|
 
 ### WopiHost.Web
 [WopiHost.Web\appSettings.json](https://github.com/petrsvihlik/WopiHost/blob/master/WopiHost.Web/appsettings.json)
@@ -74,10 +74,10 @@ Configuration
 | `Wopi:HostUrl` | `"http://wopihost:5000"` | URL pointing to a WopiHost instance (above). It's used by the URL generator. |
 | `Wopi:ClientUrl` | ` "http://owaserver"` | Base URL of your WOPI client - typically, [Office Online Server](#compatible-wopi-clients) - used by the discovery module to load WOPI client URL templates |
 | `Wopi:StorageProvider:RootPath` | [`"..\\..\\WopiHost\\wwwroot\\wopi-docs"`](https://github.com/petrsvihlik/WopiHost/tree/master/WopiHost/wwwroot/wopi-docs) | Provider-specific setting used by `WopiHost.FileSystemProvider` (which is an implementation of `IWopiStorageProvider` working with System.IO) |
-| `Wopi:Discovery:NetZone` | `"InternalHttp"` | Determines the target zone configuration of your [OOS Deployment](https://docs.microsoft.com/en-us/officeonlineserver/deploy-office-online-server). Values correspond with the [`NetZoneEnum`](https://github.com/petrsvihlik/WopiHost/blob/master/WopiHost.Discovery/NetZoneEnum.cs). |
+| `Wopi:Discovery:NetZone` | `"InternalHttp"` | Determines the target zone configuration of your [OOS Deployment](https://learn.microsoft.com/officeonlineserver/deploy-office-online-server). Values correspond with the [`NetZoneEnum`](https://github.com/petrsvihlik/WopiHost/blob/master/WopiHost.Discovery/NetZoneEnum.cs). |
 
 
-Additionally, you can use the [secret storage](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-2.2&tabs=windows) to configure both of the apps.
+Additionally, you can use the [secret storage](https://learn.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-2.2&tabs=windows) to configure both of the apps.
 
 Running the application
 -----------------------
@@ -96,25 +96,25 @@ Running the application only makes sense with a WOPI client as its counterpart. 
 
  #### Office Online Server 2016 
  
- [deployment guidelines](https://docs.microsoft.com/en-us/officeonlineserver/deploy-office-online-server)
+ [deployment guidelines](https://learn.microsoft.com/officeonlineserver/deploy-office-online-server)
 
-Note that WopiHost will always be compatible only with the latest version of OOS because Microsoft also [supports only the latest version](https://docs.microsoft.com/en-us/officeonlineserver/office-online-server-release-schedule).
+Note that WopiHost will always be compatible only with the latest version of OOS because Microsoft also [supports only the latest version](https://learn.microsoft.com/officeonlineserver/office-online-server-release-schedule).
 
 The deployment of OOS/OWA requires the server to be part of a domain. If your server is not part of any domain (e.g. you're running it in a VM sandbox) it can be overcome by promoting your machine to a [Domain Controller](https://social.technet.microsoft.com/wiki/contents/articles/12370.windows-server-2012-set-up-your-first-domain-controller-step-by-step.aspx).
-To test your OWA server [follow the instructions here](https://docs.microsoft.com/en-us/office/troubleshoot/administration/test-viewing-documents-by-using-office-online-server-viewer).
+To test your OWA server [follow the instructions here](https://learn.microsoft.com/office/troubleshoot/administration/test-viewing-documents-by-using-office-online-server-viewer).
 To remove the OWA instance use [`Remove-OfficeWebAppsMachine`](http://sharepointjack.com/2014/fun-configuring-office-web-apps-2013-owa/).
 
 #### Microsoft 365 for the Web 
 
-You can [use WopiHost to integrate with Microsoft 365 for the web](https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/online) which will require:
-- onboarding - [apply for CSPP](https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/online/apply-for-cspp-program)
-- extending the provided interfaces to support the required features by Microsoft; we provide a sample implementation of the interfaces that pass the interactive [WOPI-Validator](https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/online/build-test-ship/validator) tests
-- [Test Microsoft 365 for the web integration](https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/online/build-test-ship/testing)
+You can [use WopiHost to integrate with Microsoft 365 for the web](https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/online) which will require:
+- onboarding - [apply for CSPP](https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/online/apply-for-cspp-program)
+- extending the provided interfaces to support the required features by Microsoft; we provide a sample implementation of the interfaces that pass the interactive [WOPI-Validator](https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/online/build-test-ship/validator) tests
+- [Test Microsoft 365 for the web integration](https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/online/build-test-ship/testing)
 
 Cobalt
 ------
 In the past (in Office Web Apps 2013), some HTTP actions required support of MS-FSSHTTP protocol (also known as "cobalt"). This is no longer true with Office Online Server 2016.
-However, if the WOPI client discovers (via [SupportsCobalt](https://docs.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo#supportscobalt) property) that the WOPI host supports cobalt, it'll take advantage of it as it's more efficient.
+However, if the WOPI client discovers (via [SupportsCobalt](https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo#supportscobalt) property) that the WOPI host supports cobalt, it'll take advantage of it as it's more efficient.
 
 If you need or want your project to use Cobalt, you'll need to [create a NuGet package called Microsoft.CobaltCore.nupkg](https://github.com/petrsvihlik/WopiHost/wiki/Craft-your-own-Microsoft.CobaltCore-NuGet-package) containing Microsoft.CobaltCore.dll. This DLL is part of Office Web Apps 2013 / Office Online Server 2016 and its license doesn't allow public distribution and therefore it's not part of this repository. Please always make sure your OWA/OOS server and user connecting to it have valid licenses before you start using it.
 
@@ -140,7 +140,7 @@ The `IWopiLockProvider` interface is used to handle file locks. One sample imple
 
 ### CheckFileInfo
 
-The [CheckFileInfo](https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo) includes not only details about the file but also some additional properties that can be used by the WOPI client. You can either completely customize the response (by adding your own / missing properties), or update any properties before returning them.
+The [CheckFileInfo](https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo) includes not only details about the file but also some additional properties that can be used by the WOPI client. You can either completely customize the response (by adding your own / missing properties), or update any properties before returning them.
 
 TODO additional details
 
@@ -152,7 +152,7 @@ There is plenty of space for improvements in the overall architecture, implement
 
 Contributing
 ==========
-https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/
+https://learn.microsoft.com/dotnet/standard/design-guidelines/
 
 License
 =======
@@ -172,7 +172,7 @@ Building WOPI Host
 
 MS-FSSHTTP (Cobalt)
 -------
- - https://docs.microsoft.com/en-us/openspecs/sharepoint_protocols/ms-fsshttp/6d078cbe-2651-43a0-b460-685ac3f14c45
+ - https://learn.microsoft.com/openspecs/sharepoint_protocols/ms-fsshttp/6d078cbe-2651-43a0-b460-685ac3f14c45
 
 Building WOPI Client
 -------------------------

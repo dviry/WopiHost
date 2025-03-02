@@ -3,7 +3,7 @@
 namespace WopiHost.Abstractions;
 
 /// <summary>
-/// Model according to <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo">CheckFileInfo documentation</see> and <see href="https://msdn.microsoft.com/en-us/library/hh622920.aspx">Microsoft WOPI documentation</see>
+/// Model according to <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo">CheckFileInfo documentation</see> and <see href="https://learn.microsoft.com/openspecs/office_protocols/ms-wopi/71e66fb4-144b-4369-b597-f425f0b700b9">Microsoft WOPI documentation</see>
 /// </summary>
 public class WopiCheckFileInfo : IWopiHostCapabilities
 {
@@ -14,7 +14,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     public required string BaseFileName { get; set; }
 
     /// <summary>
-    /// A string that uniquely identifies the owner of the file. In most cases, the user who uploaded or created the file should be considered the owner. This ID is subject to uniqueness and consistency requirements. See <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-response#requirements-for-user-identity-properties">Requirements for user identity properties</see> for more information.
+    /// A string that uniquely identifies the owner of the file. In most cases, the user who uploaded or created the file should be considered the owner. This ID is subject to uniqueness and consistency requirements. See <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-response#requirements-for-user-identity-properties">Requirements for user identity properties</see> for more information.
     /// </summary>
     public required string OwnerId { get; set; }
 
@@ -24,7 +24,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     public long Size { get; set; }
 
     /// <summary>
-    /// A string value uniquely identifying the user currently accessing the file. This ID is subject to uniqueness and consistency requirements. See <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-response#requirements-for-user-identity-properties">Requirements for user identity properties</see> for more information.
+    /// A string value uniquely identifying the user currently accessing the file. This ID is subject to uniqueness and consistency requirements. See <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-response#requirements-for-user-identity-properties">Requirements for user identity properties</see> for more information.
     /// </summary>
     public required string UserId { get; set; }
 
@@ -72,7 +72,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     /// MAY specifies a URI to a web page that the WOPI client navigates to when the user clicks on UI that displays <see cref="BreadcrumbDocName"/>.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
+    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
     public Uri? BreadcrumbDocUrl { get; set; }
 
     /// <summary>
@@ -93,7 +93,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     /// <summary>
     /// A Boolean value that indicates the WOPI client should close the window or tab when the user activates any <c>Close</c> UI in the WOPI client.
     /// </summary>
-    /// <remarks>do not enable for M365: https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/faq/close-button-closes-window</remarks>
+    /// <remarks>do not enable for M365: https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/faq/close-button-closes-window</remarks>
     public bool CloseButtonClosesWindow { get; set; }
 
     /// <summary>
@@ -162,7 +162,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     public string? HostAuthenticationId { get; set; }
 
     /// <summary>
-    /// A URI to a <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/glossary#host-page">host page</see> that loads the <c>edit</c> WOPI action.
+    /// A URI to a <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/glossary#host-page">host page</see> that loads the <c>edit</c> WOPI action.
     /// </summary>
     public Uri? HostEditUrl { get; set; }
 
@@ -172,7 +172,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     public Uri? HostEmbeddedEditUrl { get; set; }
 
     /// <summary>
-    /// A URI to a web page that provides access to a viewing experience for the file that can be embedded in another HTML page. This is typically a URI to a <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/glossary#host-page">host page</see> that loads the <c>embedview</c> WOPI action.
+    /// A URI to a web page that provides access to a viewing experience for the file that can be embedded in another HTML page. This is typically a URI to a <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/glossary#host-page">host page</see> that loads the <c>embedview</c> WOPI action.
     /// </summary>
     public Uri? HostEmbeddedViewUrl { get; set; }
 
@@ -180,7 +180,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     /// A string that is the name provided by the WOPI server used to identify it for logging and other informational purposes.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
+    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
     public string? HostName { get; set; }
 
     /// <summary>
@@ -194,7 +194,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     public Uri? HostRestUrl { get; set; }
 
     /// <summary>
-    /// A URI to a <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/glossary#host-page">host page</see> that loads the <c>view</c> WOPI action. This URL is used by Office Online to navigate between view and edit mode.
+    /// A URI to a <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/glossary#host-page">host page</see> that loads the <c>view</c> WOPI action. This URL is used by Office Online to navigate between view and edit mode.
     /// </summary>
     public Uri? HostViewUrl { get; set; }
 
@@ -222,7 +222,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     /// A URI to a webpage that explains the privacy policy of the WOPI server.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
+    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
     public Uri? PrivacyUrl { get; set; }
 
     /// <summary>
@@ -263,7 +263,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     public Uri? SignoutUrl { get; set; }
 
     /// <summary>
-    /// A string value containing information about the user. This string can be passed from a WOPI client to the host by means of a <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/putuserinfo">PutUserInfo</see> operation. If the host has a UserInfo string for the user, they must include it in this property.
+    /// A string value containing information about the user. This string can be passed from a WOPI client to the host by means of a <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/putuserinfo">PutUserInfo</see> operation. If the host has a UserInfo string for the user, they must include it in this property.
     /// </summary>
     public string UserInfo { get; set; } = string.Empty;
 
@@ -276,7 +276,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     /// A URI to a webpage that explains the terms of use policy of the WOPI server.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
+    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
     public Uri? TermsOfUseUrl { get; set; }
 
     /// <summary>
@@ -297,28 +297,28 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     /// <summary>
     /// A Boolean value indicating whether the user is a business user or not.
     /// <para>
-    /// See also <seealso href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/online/scenarios/business">Supporting document editing for business users</seealso>
+    /// See also <seealso href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/online/scenarios/business">Supporting document editing for business users</seealso>
     /// </para>
     /// </summary>
     public bool LicenseCheckForEditIsEnabled { get; set; }
 
     /// <summary>
-    /// A Boolean value that indicates that the user has permission to view a <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/glossary#broadcast">broadcast</see> of this file.
+    /// A Boolean value that indicates that the user has permission to view a <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/glossary#broadcast">broadcast</see> of this file.
     /// </summary>
     public bool UserCanAttend { get; set; }
 
     /// <summary>
-    /// A Boolean value that indicates the user does not have sufficient permission to create new files on the WOPI server. Setting this to <c>true</c> tells the WOPI client that calls to <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/putrelativefile">PutRelativeFile</see> will fail for this user on the current file.
+    /// A Boolean value that indicates the user does not have sufficient permission to create new files on the WOPI server. Setting this to <c>true</c> tells the WOPI client that calls to <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/putrelativefile">PutRelativeFile</see> will fail for this user on the current file.
     /// </summary>
     public bool UserCanNotWriteRelative { get; set; }
 
     /// <summary>
-    /// A Boolean value that indicates that the user has permission to <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/glossary#broadcast">broadcast</see> this file to a set of users who have permission to broadcast or view a broadcast of the current file.
+    /// A Boolean value that indicates that the user has permission to <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/glossary#broadcast">broadcast</see> this file to a set of users who have permission to broadcast or view a broadcast of the current file.
     /// </summary>
     public bool UserCanPresent { get; set; }
 
     /// <summary>
-    /// A Boolean value that indicates that the user has permission to alter the file. Setting this to <c>true</c> tells the WOPI client that it can call <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/putfile">PutFile</see> on behalf of the user.
+    /// A Boolean value that indicates that the user has permission to alter the file. Setting this to <c>true</c> tells the WOPI client that it can call <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/putfile">PutFile</see> on behalf of the user.
     /// </summary>
     public bool UserCanWrite { get; set; }
 
