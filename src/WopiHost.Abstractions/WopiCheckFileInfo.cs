@@ -72,7 +72,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     /// MAY specifies a URI to a web page that the WOPI client navigates to when the user clicks on UI that displays <see cref="BreadcrumbDocName"/>.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
+    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
     public Uri? BreadcrumbDocUrl { get; set; }
 
     /// <summary>
@@ -93,7 +93,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     /// <summary>
     /// A Boolean value that indicates the WOPI client should close the window or tab when the user activates any <c>Close</c> UI in the WOPI client.
     /// </summary>
-    /// <remarks>do not enable for M365: https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/faq/close-button-closes-window</remarks>
+    /// <remarks>do not enable for M365: https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/faq/close-button-closes-window</remarks>
     public bool CloseButtonClosesWindow { get; set; }
 
     /// <summary>
@@ -180,7 +180,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     /// A string that is the name provided by the WOPI server used to identify it for logging and other informational purposes.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
+    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
     public string? HostName { get; set; }
 
     /// <summary>
@@ -222,7 +222,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     /// A URI to a webpage that explains the privacy policy of the WOPI server.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
+    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
     public Uri? PrivacyUrl { get; set; }
 
     /// <summary>
@@ -263,7 +263,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     public Uri? SignoutUrl { get; set; }
 
     /// <summary>
-    /// A string value containing information about the user. This string can be passed from a WOPI client to the host by means of a <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/putuserinfo">PutUserInfo</see> operation. If the host has a UserInfo string for the user, they must include it in this property.
+    /// A string value containing information about the user. This string can be passed from a WOPI client to the host by means of a <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/putuserinfo">PutUserInfo</see> operation. If the host has a UserInfo string for the user, they must include it in this property.
     /// </summary>
     public string UserInfo { get; set; } = string.Empty;
 
@@ -276,7 +276,7 @@ public class WopiCheckFileInfo : IWopiHostCapabilities
     /// A URI to a webpage that explains the terms of use policy of the WOPI server.
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
+    [Obsolete("Deprecated", false, UrlFormat = "https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-other#deprecated-properties</remarks>")]
     public Uri? TermsOfUseUrl { get; set; }
 
     /// <summary>

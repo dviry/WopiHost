@@ -1,13 +1,13 @@
 ﻿namespace WopiHost.Abstractions;
 
 /// <summary>
-/// Basic HostCapabilities according to <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-response#wopi-host-capabilities-properties">WOPI host capabilities properties</see>
+/// Basic HostCapabilities according to <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/checkfileinfo/checkfileinfo-response#wopi-host-capabilities-properties">WOPI host capabilities properties</see>
 /// </summary>
 public interface IWopiHostCapabilities
 {
     /// <summary>
-    /// An array of strings containing the <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/concepts#share-url">Share URL</see> types supported by the host.
-    /// These types can be passed in the X-WOPI-UrlType request header to signify which Share URL type to return for the <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/getshareurl">GetShareUrl (files)</see> operation.
+    /// An array of strings containing the <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/concepts#share-url">Share URL</see> types supported by the host.
+    /// These types can be passed in the X-WOPI-UrlType request header to signify which Share URL type to return for the <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/getshareurl">GetShareUrl (files)</see> operation.
     /// <para> Possible Values:
     /// <list type="bullet">
     /// <item>
@@ -78,7 +78,7 @@ public interface IWopiHostCapabilities
     bool SupportsContainers { get; set; }
 
     /// <summary>
-    /// A Boolean value that indicates that the host supports the <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/deletefile">DeleteFile</see> operation.
+    /// A Boolean value that indicates that the host supports the <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/deletefile">DeleteFile</see> operation.
     /// </summary>
     bool SupportsDeleteFile { get; set; }
 
@@ -86,16 +86,16 @@ public interface IWopiHostCapabilities
     /// A Boolean value that indicates that the host supports the following WOPI operations:
     /// <list type="bullet">
     /// <item>
-    /// <description><see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/ecosystem/checkecosystem">CheckEcosystem</see></description>
+    /// <description><see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/ecosystem/checkecosystem">CheckEcosystem</see></description>
     /// </item>
     /// <item>
-    /// <description><see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/containers/getecosystem">GetEcosystem (containers)</see></description>
+    /// <description><see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/containers/getecosystem">GetEcosystem (containers)</see></description>
     /// </item>
     ///  <item>
-    /// <description><see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/getecosystem">GetEcosystem (files)</see></description>
+    /// <description><see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/getecosystem">GetEcosystem (files)</see></description>
     /// </item>
     /// <item>
-    /// <description><see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/ecosystem/getrootcontainer">GetRootContainer (ecosystem)</see></description>
+    /// <description><see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/ecosystem/getrootcontainer">GetRootContainer (ecosystem)</see></description>
     /// </item>
     /// </list>
     /// </summary>
@@ -121,7 +121,7 @@ public interface IWopiHostCapabilities
     /// <description>EnumerateChildren (folders) - This operation is only used by OneNote for the web and is thus not needed to integrate with Office for the web or Office for iOS. It is included for completeness but does not need to be implemented.</description>
     /// </item>
     /// <item>
-    /// <description><see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/deletefile">DeleteFile</see></description>
+    /// <description><see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/deletefile">DeleteFile</see></description>
     /// </item>
     /// </list>
     /// </summary>  
@@ -133,7 +133,7 @@ public interface IWopiHostCapabilities
     bool SupportsGetFileWopiSrc { get; set; }
 
     /// <summary>
-    /// A Boolean value that indicates that the host supports the <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/getlock">GetLock</see> operation.
+    /// A Boolean value that indicates that the host supports the <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/getlock">GetLock</see> operation.
     /// </summary>
     bool SupportsGetLock { get; set; }
 
@@ -141,23 +141,23 @@ public interface IWopiHostCapabilities
     /// A Boolean value that indicates that the host supports the following WOPI operations:
     /// <list type="bullet">
     /// <item>
-    /// <description><see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/lock">Lock</see></description>
+    /// <description><see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/lock">Lock</see></description>
     /// </item>
     /// <item>
-    /// <description><see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/unlock">Unlock</see></description>
+    /// <description><see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/unlock">Unlock</see></description>
     /// </item>
     /// <item>
-    /// <description><see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/refreshlock">RefreshLock</see></description>
+    /// <description><see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/refreshlock">RefreshLock</see></description>
     /// </item>
     /// <item>
-    /// <description><see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/unlockandrelock">UnlockAndRelock</see> operations for this file.</description>
+    /// <description><see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/unlockandrelock">UnlockAndRelock</see> operations for this file.</description>
     /// </item>
     /// </list>
     /// </summary>
     bool SupportsLocks { get; set; }
 
     /// <summary>
-    /// A Boolean value that indicates that the host supports the <see href="https://learn.microsoft.com/en-us/microsoft-365/cloud-storage-partner-program/rest/files/renamefile">RenameFile</see> operation.
+    /// A Boolean value that indicates that the host supports the <see href="https://learn.microsoft.com/microsoft-365/cloud-storage-partner-program/rest/files/renamefile">RenameFile</see> operation.
     /// </summary>
     bool SupportsRename { get; set; }
 
